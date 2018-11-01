@@ -14,7 +14,8 @@
     "axios": "^0.17.1",
     "vue-axios": "^2.0.2",
     "vue-router": "^3.0.1",
-    "mint-ui": "^2.2.13"
+    "mint-ui": "^2.2.13",
+    "compression-webpack-plugin": "^1.1.11",
   },
   "browserslist": [
     "> 1%",
