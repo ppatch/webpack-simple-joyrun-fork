@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
+var CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -151,6 +152,13 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+       algorithm: 'gzip',
+       test: /\.js$|\.css$|\.html$/,
+       threshold: 10240,
+       minRatio: 0.8
     })
   ])
 }
